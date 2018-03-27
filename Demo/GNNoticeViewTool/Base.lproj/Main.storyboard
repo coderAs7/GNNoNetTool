@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AB-MQ-cJc">
+                                <rect key="frame" x="0.0" y="557" width="46" height="30"/>
+                                <state key="normal" title="加载中"/>
+                                <connections>
+                                    <action selector="showLoading:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kam-hp-x0P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyi-66-mR2">
+                                <rect key="frame" x="76" y="557" width="46" height="30"/>
+                                <state key="normal" title="无网络"/>
+                                <connections>
+                                    <action selector="showNoNet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JWe-2x-0Ap"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nB6-Hv-wdg">
+                                <rect key="frame" x="344" y="557" width="31" height="30"/>
+                                <state key="normal" title="隐藏"/>
+                                <connections>
+                                    <action selector="hideNoticeView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZYb-dE-3Sx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xk-SF-IPd">
+                                <rect key="frame" x="268" y="557" width="46" height="30"/>
+                                <state key="normal" title="无数据"/>
+                                <connections>
+                                    <action selector="showNoData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ql-al-j0S"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xyi-66-mR2" firstAttribute="centerY" secondItem="3AB-MQ-cJc" secondAttribute="centerY" id="41O-v2-vKD"/>
+                            <constraint firstItem="nB6-Hv-wdg" firstAttribute="centerY" secondItem="xyi-66-mR2" secondAttribute="centerY" id="7hm-XH-exW"/>
+                            <constraint firstItem="xyi-66-mR2" firstAttribute="leading" secondItem="3AB-MQ-cJc" secondAttribute="trailing" constant="30" id="9Md-Aa-u4W"/>
+                            <constraint firstItem="5xk-SF-IPd" firstAttribute="centerY" secondItem="3AB-MQ-cJc" secondAttribute="centerY" id="Kcz-rc-hvT"/>
+                            <constraint firstItem="nB6-Hv-wdg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mfw-OS-LFT"/>
+                            <constraint firstItem="nB6-Hv-wdg" firstAttribute="leading" secondItem="5xk-SF-IPd" secondAttribute="trailing" constant="30" id="OIq-z0-m9A"/>
+                            <constraint firstItem="3AB-MQ-cJc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TzO-fa-1O9"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xyi-66-mR2" secondAttribute="trailing" constant="20" symbolic="YES" id="WOZ-xC-J4Q"/>
+                            <constraint firstItem="5xk-SF-IPd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="bkh-w3-M5q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3AB-MQ-cJc" secondAttribute="bottom" constant="80" id="dVF-No-Ztt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
