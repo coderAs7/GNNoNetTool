@@ -9,18 +9,7 @@
 #import "UIView+Loading.h"
 
 @implementation UIView (Loading)
-- (void)showLoadingNoticeView{
-    CGPoint center = CGPointMake([UIScreen mainScreen].bounds.size.width * 0.5, [UIScreen mainScreen].bounds.size.height * 0.5);
-    [self showLoadingNoticeViewWithCenter:center];
-}
-- (void)showLoadingNoticeViewWithCenter:(CGPoint)center{
-    // 修改这里,自定义你自己的展示view
-    UIView *view = [self createLoadingView];
-    view.center = center;
-    [self gn_showView:view];
-}
-
-- (UIView *)createLoadingView{
+- (UIView *)gn_createLoadingView{
     UIView *view = [UIView new];
     view.frame = CGRectMake(0, 0, 60, 50);
     
@@ -40,4 +29,29 @@
     [view addSubview:label];
     return view;
 }
+
+/// 展示在中间,内部使用了约束布局,内部使用addSubView
+- (void)gn_showLoadingNoticeView{
+    [self gn_showLoadingNoticeViewWithCenterOffset:CGPointZero atIndex:-1];
+}
+/// 展示在中间,内部使用了约束布局,传入-1时候,内部使用addSubView
+- (void)gn_showLoadingNoticeViewAtIndex:(NSInteger)index{
+    [self gn_showLoadingNoticeViewWithCenterOffset:CGPointZero atIndex:index];
+}
+/// 展示在自定义的位置,相对于父控件的中心位置进行偏移,内部使用了约束,内部使用addSubView
+- (void)gn_showLoadingNoticeViewWithCenterOffset:(CGPoint)offset{
+    [self gn_showLoadingNoticeViewWithCenterOffset:offset atIndex:-1];
+}
+/// 展示在自定义的位置,相对于父控件的中心位置进行偏移,指定层级,内部使用了约束,内部使用addSubView
+- (void)gn_showLoadingNoticeViewWithCenterOffset:(CGPoint)offset atIndex:(NSInteger)index{
+    // 修改这里,自定义你自己的展示view
+    UIView *imageView = [self gn_createLoadingView];
+    [self gn_showView:imageView atIndex:index];
+    imageView.translatesAutoresizingMaskIntoConstraints = NO;
+    [imageView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor constant:0].active = YES;
+    [imageView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor constant:0].active = YES;
+    [imageView.widthAnchor constraintEqualToConstant:imageView.frame.size.width].active  = YES;
+    [imageView.heightAnchor constraintEqualToConstant:imageView.frame.size.height].active  = YES;
+}
+
 @end

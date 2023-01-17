@@ -16,16 +16,17 @@
 @implementation ViewController
 
 - (IBAction)showNoNet:(id)sender {
-    [self.view showNoNetNoticeViewWithCenter:self action:@selector(showLoading:)];
+    [self.view gn_showNoNetNoticeViewWithTarget:self action:@selector(showLoading:)];
 }
 - (IBAction)showNoData:(id)sender {
-    [self.view showNodataNoticeView];
+    [self.view gn_showNoDataNoticeView];
 }
 - (IBAction)hideNoticeView:(id)sender {
-    [self.view hideNoticeView];
+    [self.view gn_hideNoticeView];
 }
 - (IBAction)showLoading:(id)sender {
-    [self.view showLoadingNoticeView];
+//    [self.view showLoadingNoticeView];
+    [self.view gn_showLoadingNoticeView];
 }
 
 

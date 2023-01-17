@@ -17,7 +17,7 @@
 		044B4B8E206A2B0D003C228B /* GNNoticeViewToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B4B8D206A2B0D003C228B /* GNNoticeViewToolUITests.m */; };
 		044B4BB0206A2DDF003C228B /* UIView+GNNotice.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B4BAA206A2DDF003C228B /* UIView+GNNotice.m */; };
 		044B4BB1206A2DDF003C228B /* UIView+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B4BAC206A2DDF003C228B /* UIView+Loading.m */; };
-		044B4BB2206A2DDF003C228B /* UIView+Nodata.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B4BAE206A2DDF003C228B /* UIView+Nodata.m */; };
+		044B4BB2206A2DDF003C228B /* UIView+NoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B4BAE206A2DDF003C228B /* UIView+NoData.m */; };
 		044B4BB5206A32F7003C228B /* UIView+NoNet.m in Sources */ = {isa = PBXBuildFile; fileRef = 044B4BB4206A32F7003C228B /* UIView+NoNet.m */; };
 		044B4BB7206A333F003C228B /* GNNotice.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 044B4BB6206A333F003C228B /* GNNotice.bundle */; };
 /* End PBXBuildFile section */
@@ -60,8 +60,8 @@
 		044B4BAA206A2DDF003C228B /* UIView+GNNotice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GNNotice.m"; sourceTree = "<group>"; };
 		044B4BAB206A2DDF003C228B /* UIView+Loading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Loading.h"; sourceTree = "<group>"; };
 		044B4BAC206A2DDF003C228B /* UIView+Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Loading.m"; sourceTree = "<group>"; };
-		044B4BAD206A2DDF003C228B /* UIView+Nodata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Nodata.h"; sourceTree = "<group>"; };
-		044B4BAE206A2DDF003C228B /* UIView+Nodata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Nodata.m"; sourceTree = "<group>"; };
+		044B4BAD206A2DDF003C228B /* UIView+NoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NoData.h"; sourceTree = "<group>"; };
+		044B4BAE206A2DDF003C228B /* UIView+NoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NoData.m"; sourceTree = "<group>"; };
 		044B4BB3206A32F7003C228B /* UIView+NoNet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+NoNet.h"; sourceTree = "<group>"; };
 		044B4BB4206A32F7003C228B /* UIView+NoNet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+NoNet.m"; sourceTree = "<group>"; };
 		044B4BB6206A333F003C228B /* GNNotice.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GNNotice.bundle; sourceTree = "<group>"; };
@@ -156,8 +156,8 @@
 				044B4BAA206A2DDF003C228B /* UIView+GNNotice.m */,
 				044B4BAB206A2DDF003C228B /* UIView+Loading.h */,
 				044B4BAC206A2DDF003C228B /* UIView+Loading.m */,
-				044B4BAD206A2DDF003C228B /* UIView+Nodata.h */,
-				044B4BAE206A2DDF003C228B /* UIView+Nodata.m */,
+				044B4BAD206A2DDF003C228B /* UIView+NoData.h */,
+				044B4BAE206A2DDF003C228B /* UIView+NoData.m */,
 				044B4BB3206A32F7003C228B /* UIView+NoNet.h */,
 				044B4BB4206A32F7003C228B /* UIView+NoNet.m */,
 				044B4BB8206A37DA003C228B /* GNNotice.h */,
@@ -227,7 +227,7 @@
 		044B4B5E206A2B0D003C228B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = mac;
 				TargetAttributes = {
 					044B4B65206A2B0D003C228B = {
@@ -299,7 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				044B4BB2206A2DDF003C228B /* UIView+Nodata.m in Sources */,
+				044B4BB2206A2DDF003C228B /* UIView+NoData.m in Sources */,
 				044B4B6E206A2B0D003C228B /* ViewController.m in Sources */,
 				044B4B79206A2B0D003C228B /* main.m in Sources */,
 				044B4BB1206A2DDF003C228B /* UIView+Loading.m in Sources */,
@@ -374,6 +374,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -381,8 +382,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -408,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -429,6 +432,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -436,8 +440,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -457,7 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -469,6 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EK953CNXYU;
 				INFOPLIST_FILE = GNNoticeViewTool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ymg.www.GNNoticeViewTool;
@@ -482,6 +489,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EK953CNXYU;
 				INFOPLIST_FILE = GNNoticeViewTool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ymg.www.GNNoticeViewTool;

@@ -10,5 +10,5 @@
 #define GNNotice_h
 #import "UIView+NoNet.h"
 #import "UIView+Loading.h"
-#import "UIView+Nodata.h"
+#import "UIView+NoData.h"
 #endif /* GNNotice_h */

@@ -9,19 +9,19 @@
 #import "UIView+NoNet.h"
 
 @implementation UIView (NoNet)
-- (void)showNoNetNoticeViewWithCenter:(id)target action:(SEL)action{
-    CGPoint center = CGPointMake([UIScreen mainScreen].bounds.size.width * 0.5, [UIScreen mainScreen].bounds.size.height * 0.5);
-    [self showNoNetNoticeViewWithCenter:center target:target action:action];
-}
-- (void)showNoNetNoticeViewWithCenter:(CGPoint)center target:(id)target action:(SEL)action{
-    // 修改这里,自定义你自己的展示view
-    UIView *view = [self createViewWithCenter:target action:action];
-    view.center = center;
-    [self gn_showView:view];
-}
+//- (void)showNoNetNoticeViewWithCenter:(id)target action:(SEL)action{
+//    CGPoint center = CGPointMake([UIScreen mainScreen].bounds.size.width * 0.5, [UIScreen mainScreen].bounds.size.height * 0.5);
+//    [self showNoNetNoticeViewWithCenter:center target:target action:action];
+//}
+//- (void)showNoNetNoticeViewWithCenter:(CGPoint)center target:(id)target action:(SEL)action{
+//    // 修改这里,自定义你自己的展示view
+//    UIView *view = [self createViewWithCenter:target action:action];
+//    view.center = center;
+//    [self gn_showView:view];
+//}
 
 
-- (UIView *)createViewWithCenter:(id)target action:(SEL)action{
+- (UIView *)gn_createViewWithCenter:(id)target action:(SEL)action{
     CGFloat width = [UIScreen mainScreen].bounds.size.width * 0.6;
     CGFloat height = 100;
     
@@ -55,4 +55,31 @@
     [view addSubview:btn];
     return view;
 }
+
+// al开头的方法内部使用了约束布局
+/// 展示在中间,内部使用了约束布局,内部使用addSubView
+- (void)gn_showNoNetNoticeViewWithTarget:(id)target action:(SEL)action{
+    [self gn_showNoNetNoticeViewWithCenterOffset:CGPointZero target:target action:action atIndex:-1];
+}
+/// 展示在中间,内部使用了约束布局,传入-1时候,内部使用addSubView
+- (void)gn_showNoNetNoticeViewWithTarget:(id)target action:(SEL)action atIndex:(NSInteger)index{
+    [self gn_showNoNetNoticeViewWithCenterOffset:CGPointZero target:target action:action atIndex:index];
+}
+/// 展示在自定义的位置,相对于父控件的中心位置进行偏移,内部使用了约束,内部使用addSubView
+- (void)gn_showNoNetNoticeViewWithCenterOffset:(CGPoint)offset target:(id)target action:(SEL)action{
+    [self gn_showNoNetNoticeViewWithCenterOffset:offset target:target action:action atIndex:-1];
+}
+/// 展示在自定义的位置,相对于父控件的中心位置进行偏移,指定层级,内部使用了约束,内部使用addSubView
+- (void)gn_showNoNetNoticeViewWithCenterOffset:(CGPoint)offset target:(id)target action:(SEL)action atIndex:(NSInteger)index{
+    // 修改这里,自定义你自己的展示view
+    UIView *view = [self gn_createViewWithCenter:target action:action];
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+    [self gn_showView:view atIndex:index];
+    
+    [view.widthAnchor constraintEqualToConstant:view.frame.size.width].active = YES;
+    [view.heightAnchor constraintEqualToConstant:view.frame.size.height].active = YES;
+    [view.centerXAnchor constraintEqualToAnchor:self.centerXAnchor constant:offset.x].active = YES;
+    [view.centerYAnchor constraintEqualToAnchor:self.centerYAnchor constant:offset.y].active = YES;
+}
+
 @end
