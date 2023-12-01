@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  GNNoticeSwift
 //
-//  Created by naton_iOS on 2023/11/29.
+//  Created by iOS on 2023/11/29.
 //
 
 import UIKit
