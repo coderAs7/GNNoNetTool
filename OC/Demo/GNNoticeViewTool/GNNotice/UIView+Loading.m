@@ -48,8 +48,8 @@
     UIView *imageView = [self gn_createLoadingView];
     [self gn_showView:imageView atIndex:index];
     imageView.translatesAutoresizingMaskIntoConstraints = NO;
-    [imageView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor constant:0].active = YES;
-    [imageView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor constant:0].active = YES;
+    [imageView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor constant:offset.x].active = YES;
+    [imageView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor constant:offset.y].active = YES;
     [imageView.widthAnchor constraintEqualToConstant:imageView.frame.size.width].active  = YES;
     [imageView.heightAnchor constraintEqualToConstant:imageView.frame.size.height].active  = YES;
 }
